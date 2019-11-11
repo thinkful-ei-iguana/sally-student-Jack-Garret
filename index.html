@@ -9,10 +9,44 @@
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-        <script>
-            const appRoot = document.querySelector('#application-root');
-            const helloWorld1 = React.createElement('h1', null, 'Hello World!');
-            ReactDOM.render(helloWorld1, appRoot);
-        </script>
+        <script type="text/babel">
+            function App(props){
+                return (
+                    <span>{props.children}</span>
+                );
+            }
+            ReactDOM.render(
+                <App >
+                    <header><h1>Sally Student Resume</h1></header>
+                    <main>
+                        <section className="eduction">Clown school for clowns</section>
+                        <address>
+                            <p>Name: Sally</p>
+                            <a href="mailto:example@gmail.com">email</a>
+                            <p> address: 123 clown street></p>
+                            <img src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg" />
+                        </address>
+                        <section className="work history">
+                            <h2>work history</h2>
+                            <ul>
+                                <li>
+                                    <p>Company: Clowns inc.</p>
+                                    <p>job title: clown</p> 
+                                    <p>dates of employment: Jun 2001- Jul 2001</p>
+                                    <p>description: My job was to be a clown</p>
+                                </li>
+                                <li>
+                                    <p>Company: Self Employed Clown</p>
+                                    <p>job title: self employed clown</p>  
+                                    <p>dates of employment: Jul 2001- Present</p>
+                                    <p>description: My job was to be a clown, but on my own</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </main>
+                </App>,
+                document.querySelector('#application-root')
+            );
+          </script>
     </body>
 </html>
